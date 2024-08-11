@@ -8,6 +8,8 @@ clc
 clear
 close all
 
+% All the following are propellants for use in cooling channels, uncomment them by deleting the percent sign.
+
 % Load properties data
 % load('Methane.mat')
 % l_prop = CH4_liquid;
@@ -18,6 +20,8 @@ close all
 %l_prop = C3H8_liquid;
 %s_prop = C3H8_saturated;
 %v_prop = C3H8_vapor;
+
+% Kerosene properties
 
 load('Kerosene_liquid.mat')
 load('Kerosene_saturated.mat')
@@ -31,9 +35,11 @@ v_prop = Kerosene_vapor;
 %s_prop = O2_saturated;
 %v_prop = O2_vapor;
 
+% Values have been changed to reflect SPARK2 
+
 % General Engine Properties
-Fuel = 'Jet-A(L)';          % fuel name Kerosene
-Oxidizer = 'O2';            % oxidizer name Kerosene
+Fuel = 'Jet-A(L)';          % fuel name from NASA CEA
+Oxidizer = 'O2';            % oxidizer name from NASA CEA
 OF = 1.7;                   % oxidizer/fuel mixture ratio
 Pc = 35e5;                  % combustion chamber pressure, Pa
 Ft = 45e2;                  % thrust, N
@@ -57,8 +63,8 @@ h = 0.005;                  % cooling channel height, m
 y = 0.005;                  % thickness at channel base, m
 
 % Coolant Vapor Table Specifications
-P_1 = 10e5;                 % pressure in first table of vapor properties, Kerosene, Pa
-P_l = 60e5;                 % pressure in last table of vapor properties, Kerosene, Pa
+P_1 = 10e5;                 % pressure in first table of vapor properties, Pa
+P_l = 60e5;                 % pressure in last table of vapor properties, Pa
 N_p = 6;                    % number of tables of vapor properties
 
 % Thrust Chamber Profile
